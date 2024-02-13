@@ -1,8 +1,13 @@
 const yesBtn = document.querySelector('#yesBtn');
 
 yesBtn.addEventListener('click',function () {
-    alert('SABIA QUE DIRIAS SI')
-    alert('NOS VEMOS LUEGO')
+
+  alert('SABIA QUE DIRIAS SI');
+  
+  alert('NOS VEMOS LUEGO');
+
+  location.href = "https://wa.me/+524613775673"; 
+
 });
 
 const noBtn = document.querySelector('#noBtn');
