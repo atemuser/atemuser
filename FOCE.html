@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video en Pantalla Completa</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+    }
+    video {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+</head>
+<body>
+<video id="videoPlayer" controls>
+    <source src="La Dignidad Humana Y el trato digno.mp4" type="video/mp4">
+    Tu navegador no soporta el elemento de video.
+</video>
+
+<script>
+    const video = document.getElementById('videoPlayer');
+
+    // Función para activar el modo de pantalla completa
+    function toggleFullScreen() {
+        if (!document.fullscreenElement) {
+            video.requestFullscreen().catch(err => {
+                alert(`Error al intentar activar el modo de pantalla completa: ${err.message}`);
+            });
+        } else {
+            document.exitFullscreen();
+        }
+    }
+
+    // Evento click para activar/desactivar el modo de pantalla completa
+    video.addEventListener('click', toggleFullScreen);
+</script>
+</body>
+</html>
